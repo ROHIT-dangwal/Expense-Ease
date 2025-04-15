@@ -1,0 +1,15 @@
+{
+    "java.project.referencedLibraries": {
+        "include": [
+            "lib/**/*.jar",
+            "/Users/rohit/javafx-sdk-24/lib/**/*.jar",
+            "/Users/rohit/mysql-connector-j-9.3.0/mysql-connector-j-9.3.0.jar",
+            "/Users/rohit/mysql-connector-j-9.3.0/**/*.jar",
+            "ExpenseEase/**/*.jar",
+            "/Users/rohit/Downloads/fontawesomefx-fontawesome-4.7.0-9.1.2.jar"
+        ],
+        "exclude": [
+            "ExpenseEase/lib/fontawesomefx-8.9.jar"
+        ]
+    }
+}
