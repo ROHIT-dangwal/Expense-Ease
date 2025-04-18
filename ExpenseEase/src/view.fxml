@@ -14,14 +14,15 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Rectangle?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="800.0" prefHeight="500.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="800.0" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sceneController">
    <children>
       <Separator layoutX="144.0" orientation="VERTICAL" prefHeight="431.0" prefWidth="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="155.0" AnchorPane.topAnchor="0.0" />
-      <Button layoutX="3.0" layoutY="171.0" minWidth="-Infinity" mnemonicParsing="false" onAction="#toadd" prefWidth="155.0" text="Add Income" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="125.0" />
-      <Button layoutY="230.0" mnemonicParsing="false" onAction="#toupdate" prefWidth="155.0" text="Update Expenses" AnchorPane.leftAnchor="0.0" />
-      <Button layoutY="282.0" mnemonicParsing="false" onAction="#todownload" prefHeight="31.0" prefWidth="155.0" text="Download Transaction" AnchorPane.leftAnchor="0.0" />
-      <Button graphicTextGap="0.0" layoutX="3.0" layoutY="110.0" mnemonicParsing="false" onAction="#tohome" prefWidth="155.0" text="Home" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="75.0" />
-      <Button layoutY="177.0" mnemonicParsing="false" onAction="#toview" prefWidth="155.0" text="View Transactions" AnchorPane.leftAnchor="0.0" />
+      <Separator layoutX="144.0" orientation="VERTICAL" prefHeight="431.0" prefWidth="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="155.0" AnchorPane.topAnchor="0.0" />
+      <Button layoutX="3.0" layoutY="171.0" minWidth="-Infinity" mnemonicParsing="false" onAction="#navigateToAddExpense" prefWidth="155.0" text="Add Income" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="125.0" />
+      <Button layoutY="230.0" mnemonicParsing="false" onAction="#navigateToUpdate" prefWidth="155.0" text="Update Expenses" AnchorPane.leftAnchor="0.0" />
+      <Button layoutY="282.0" mnemonicParsing="false" onAction="#navigateToDownload" prefHeight="31.0" prefWidth="155.0" text="Download Transaction" AnchorPane.leftAnchor="0.0" />
+      <Button graphicTextGap="0.0" layoutX="3.0" layoutY="110.0" mnemonicParsing="false" onAction="#navigateToHome" prefWidth="155.0" text="Home" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="75.0" />
+      <Button layoutY="177.0" mnemonicParsing="false" onAction="#navigateToViewExpenses" prefWidth="155.0" text="View Transactions" AnchorPane.leftAnchor="0.0" />
       <TableView layoutX="140.0" layoutY="69.0" minHeight="800.0" minWidth="796.0" AnchorPane.bottomAnchor="19.0" AnchorPane.leftAnchor="182.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="66.0">
         <columns>
           <TableColumn prefWidth="75.0" text="C1" />

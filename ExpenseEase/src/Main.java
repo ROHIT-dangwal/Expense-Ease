@@ -16,7 +16,7 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(location);
         primaryStage.setTitle("ExpenseEase");
 
-        Scene scene = new Scene(root, 1200, 700);
+        Scene scene = new Scene(root, 1200, 800);
 
         primaryStage.setScene(scene);
         primaryStage.show();
