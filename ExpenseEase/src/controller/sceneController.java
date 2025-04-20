@@ -1,3 +1,5 @@
+package controller;
+
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.fxml.FXMLLoader;
@@ -20,7 +22,7 @@ public class sceneController {
      */
     private void switchScene(ActionEvent event, String fxmlFile) {
         try {
-            URL location = getClass().getResource(fxmlFile);
+            URL location = getClass().getResource("/fxml/" + fxmlFile);
             if (location == null) {
                 throw new IOException("Cannot find FXML file: " + fxmlFile);
             }
@@ -60,9 +62,6 @@ public class sceneController {
         switchScene(event, "view.fxml");
     }
 
-    /**
-     * Navigate to the download/export screen
-     */
     public void navigateToDownload(ActionEvent event) {
         System.out.println("Navigating to Download/Export screen");
         switchScene(event, "download.fxml");
@@ -74,5 +73,11 @@ public class sceneController {
     public void navigateToUpdate(ActionEvent event) {
         System.out.println("Navigating to Update/Settings screen");
         switchScene(event, "update.fxml");
+    }
+
+    public void exitApplication(ActionEvent event) {
+        System.out.println("Exiting application");
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.close();
     }
 }

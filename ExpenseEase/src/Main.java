@@ -12,7 +12,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        URL location = getClass().getResource("home.fxml");
+        URL location = getClass().getResource("fxml/home.fxml");
         Parent root = FXMLLoader.load(location);
         primaryStage.setTitle("ExpenseEase");
 
@@ -20,6 +20,5 @@ public class Main extends Application {
 
         primaryStage.setScene(scene);
         primaryStage.show();
-
     }
 }
