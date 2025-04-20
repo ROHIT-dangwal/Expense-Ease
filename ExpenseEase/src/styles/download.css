@@ -44,3 +44,32 @@
 .exit {
   -fx-font-size: 14px;
 }
+
+.heading {
+  -fx-font-size: 50px;
+  -fx-font-weight: bolder;
+  -fx-padding: 10px;
+}
+
+.selecttable {
+  -fx-font-size: 14px;
+  -fx-font-weight: bolder;
+  -fx-padding: 5px;
+  -fx-background-radius: 10px;
+  -fx-background-color: #f4f4f4;
+  -fx-border-color: #61d8de;
+  -fx-border-width: 2px;
+  -fx-border-radius: 10px;
+}
+.downloadbutton {
+  -fx-font-size: 14px;
+  -fx-font-weight: bolder;
+  -fx-padding: 5px;
+  -fx-background-radius: 10px;
+  -fx-background-color: #f4f4f4;
+  -fx-border-color: #61d8de;
+  -fx-border-width: 2px;
+  -fx-border-radius: 10px;
+  -fx-pref-width: 140px;
+  -fx-pref-height: 20px;
+}
