@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+.root {
+  -fx-font-family: "kanit", sans-serif;
+  -fx-background-color: #f4f4f4;
+  -fx-font-size: 14px;
+}
+
+.button {
+  -fx-background-color: linear-gradient(to right, #61d8de, #e839f6);
+  -fx-cursor: hand;
+  -fx-border-radius: 10px 40px 40px 10px;
+  -fx-background-radius: 10px 40px 40px 10px;
+  -fx-font-size: 11px;
+  -fx-font-weight: bold;
+  /* -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 3, 0, 0, 1); */
+}
+
+/* Hover state */
+.button:hover {
+  -fx-background-color: #2980b9;
+  /* -fx-effect: dropshadow(gaussian, #3498db, 10, 0.3, 0, 0); */
+  -fx-scale-x: 1.05;
+  -fx-scale-y: 1.2;
+  -fx-rotate: -2deg;
+}
+
+/* Pressed state */
+.button:pressed {
+  -fx-background-color: #1c6391;
+  -fx-effect: dropshadow(gaussian, #1c6391, 10, 0.2, 0, 0);
+}
+
+.projectname {
+  -fx-font-size: 20px;
+  /* -fx-text-fill: #3498db; */
+  -fx-font-weight: bolder;
+  -fx-padding: 10px;
+}
+
+.exit {
+  -fx-font-size: px;
+}

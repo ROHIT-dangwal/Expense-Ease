@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
@@ -28,15 +29,15 @@
       <!-- Download functionality -->
       <VBox alignment="TOP_CENTER" layoutX="178.0" layoutY="86.0" prefHeight="691.0" prefWidth="1004.0" spacing="20.0" AnchorPane.bottomAnchor="23.0" AnchorPane.leftAnchor="178.0" AnchorPane.rightAnchor="18.0" AnchorPane.topAnchor="69.0">
          <children>
-            <Label text="Export Data to CSV" textAlignment="CENTER">
+            <Label styleClass="heading" text="Export Data to CSV" textAlignment="CENTER">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
             <Separator prefWidth="200.0" />
             <Label text="Select the table you want to download:" />
-            <ComboBox fx:id="tableSelector" prefWidth="200.0" promptText="Select Table" />
-            <Button fx:id="downloadButton" mnemonicParsing="false" onAction="#handleDownload" prefHeight="32.0" prefWidth="200.0" text="Download as CSV">
+            <ComboBox fx:id="tableSelector" prefWidth="200.0" promptText="Select Table" styleClass="selecttable" />
+            <Button fx:id="downloadButton" mnemonicParsing="false" onAction="#handleDownload" prefHeight="32.0" prefWidth="200.0" styleClass="downloadbutton" text="Download as CSV">
                <effect>
                   <DropShadow />
                </effect>
@@ -51,18 +52,18 @@
       <AnchorPane layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" AnchorPane.leftAnchor="165.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#526779" height="25.0" layoutX="23.0" layoutY="9.0" stroke="BLACK" strokeType="INSIDE" width="5.0" AnchorPane.leftAnchor="23.0" />
-            <Label layoutX="63.0" layoutY="14.0" text="Download Transactions" AnchorPane.leftAnchor="63.0" AnchorPane.topAnchor="14.0" />
+            <Label layoutX="63.0" layoutY="14.0" text="Download Transactions" AnchorPane.leftAnchor="63.0" AnchorPane.topAnchor="10.0" />
             <fx:include layoutX="394.0" layoutY="12.0" source="dateComponent.fxml" AnchorPane.rightAnchor="387.5" />
-            <Button layoutX="502.5" layoutY="8.0" mnemonicParsing="false" onAction="#exitApplication" text="Exit" AnchorPane.rightAnchor="305.5" AnchorPane.topAnchor="8.0" />
-            <Label layoutX="565.0" layoutY="13.0" text="Welcome , User" AnchorPane.rightAnchor="179.5" AnchorPane.topAnchor="14.0" />
-            <Circle fill="#48ddbd" layoutX="759.0" layoutY="23.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.rightAnchor="81.0" />
-            <Label layoutX="770.0" layoutY="13.0" text="Active" AnchorPane.rightAnchor="38.0" AnchorPane.topAnchor="14.0" />
-            <ImageView fitHeight="21.0" fitWidth="21.0" layoutX="36.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="36.0" AnchorPane.topAnchor="14.0">
+            <Button layoutX="502.5" layoutY="8.0" mnemonicParsing="false" onAction="#exitApplication" prefHeight="24.0" prefWidth="63.0" text="Exit" AnchorPane.rightAnchor="294.0" AnchorPane.topAnchor="8.0" />
+            <Label layoutX="565.0" layoutY="13.0" text="Welcome , User" AnchorPane.rightAnchor="179.5" AnchorPane.topAnchor="10.0" />
+            <Circle fill="#48ddbd" layoutX="759.0" layoutY="23.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.rightAnchor="89.0" AnchorPane.topAnchor="16.0" />
+            <Label layoutX="770.0" layoutY="13.0" text="Active" AnchorPane.rightAnchor="38.0" AnchorPane.topAnchor="10.0" />
+            <ImageView fitHeight="21.0" fitWidth="21.0" layoutX="36.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="36.0" AnchorPane.topAnchor="11.0">
                <image>
                   <Image url="@../images/download.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="31.0" fitWidth="41.0" layoutX="677.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="105.93333435058594">
+            <ImageView fitHeight="31.0" fitWidth="41.0" layoutX="677.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="120.93333435058594" AnchorPane.topAnchor="4.0">
                <image>
                   <Image url="@../images/user.png" />
                </image>
@@ -72,7 +73,7 @@
       
       <AnchorPane layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="155.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label layoutX="2.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="155.0" text="Expense Ease" textAlignment="JUSTIFY" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <Label layoutX="2.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="155.0" styleClass="projectname" text="Expense Ease" textAlignment="JUSTIFY" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
                <padding>
                   <Insets left="33.0" />
                </padding>

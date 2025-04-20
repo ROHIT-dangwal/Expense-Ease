@@ -3,15 +3,19 @@
   -fx-font-family: "kanit", sans-serif;
   -fx-background-color: #f4f4f4;
   -fx-font-size: 14px;
+  -fx-min-width: 1000px;
+  -fx-min-height: 600px;
+  -fx-pref-width: 1200px;
+  -fx-pref-height: 800px;
 }
 
 .button {
-  -fx-background-color: #3498db;
-  -fx-text-fill: white;
+  -fx-background-color: linear-gradient(to right, #61d8de, #e839f6);
   -fx-cursor: hand;
-  -fx-border-radius: 50px;
-  -fx-background-radius: 40px;
+  -fx-border-radius: 10px 40px 40px 10px;
+  -fx-background-radius: 10px 40px 40px 10px;
   -fx-font-size: 11px;
+  -fx-font-weight: bold;
   /* -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 3, 0, 0, 1); */
 }
 
@@ -30,9 +34,13 @@
   -fx-effect: dropshadow(gaussian, #1c6391, 10, 0.2, 0, 0);
 }
 
-#projectname {
-  -fx-font-size: 420px;
-  -fx-text-fill: #3498db;
-  -fx-font-weight: bold;
+.projectname {
+  -fx-font-size: 20px;
+
+  -fx-font-weight: bolder;
   -fx-padding: 10px;
+}
+
+.exit {
+  -fx-font-size: 14px;
 }
