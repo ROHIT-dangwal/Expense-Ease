@@ -3,6 +3,10 @@
   -fx-font-family: "kanit", sans-serif;
   -fx-background-color: #f4f4f4;
   -fx-font-size: 14px;
+  -fx-min-width: 1000px;
+  -fx-min-height: 600px;
+  -fx-max-width: Infinity;
+  -fx-max-height: Infinity;
 }
 
 .button {

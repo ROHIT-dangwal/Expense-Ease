@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.SplitPane?>
@@ -9,62 +11,84 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="800.0" prefHeight="800.0" prefWidth="1200.0" stylesheets="@../styles/update.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.sceneController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="800.0" prefHeight="800.0" prefWidth="1900.0" stylesheets="@../styles/update.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.UpdateExpensesController">
    <children>
       <Separator layoutX="144.0" orientation="VERTICAL" prefHeight="431.0" prefWidth="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="155.0" AnchorPane.topAnchor="0.0" />
-      <Button layoutX="3.0" layoutY="171.0" minWidth="-Infinity" mnemonicParsing="false" onAction="#navigateToAddExpense" prefWidth="155.0" text="Add Income" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="125.0" />
-      <Button layoutY="230.0" mnemonicParsing="false" onAction="#navigateToUpdate" prefWidth="155.0" text="Update Expenses" AnchorPane.leftAnchor="0.0" />
-      <Button layoutY="282.0" mnemonicParsing="false" onAction="#navigateToDownload" prefHeight="31.0" prefWidth="160.0" text="Download Transaction" AnchorPane.leftAnchor="0.0" />
-      <Button graphicTextGap="0.0" layoutX="3.0" layoutY="110.0" mnemonicParsing="false" onAction="#navigateToHome" prefWidth="155.0" text="Home" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="75.0" />
-      <Button layoutY="177.0" mnemonicParsing="false" onAction="#navigateToViewExpenses" prefWidth="155.0" text=" View Transactions" AnchorPane.leftAnchor="0.0" />
+      <Button layoutX="3.0" layoutY="171.0" minWidth="-Infinity" mnemonicParsing="false" onAction="#navigateToAddExpense" prefWidth="140.0" text="Add Income" AnchorPane.leftAnchor="7.0" AnchorPane.topAnchor="131.0">
+         <padding>
+            <Insets bottom="6.0" left="5.0" right="5.0" top="6.0" />
+         </padding>
+      </Button>
+      <Button layoutY="230.0" mnemonicParsing="false" onAction="#navigateToUpdate" prefWidth="140.0" text="Update Expenses" AnchorPane.leftAnchor="7.0" AnchorPane.topAnchor="231.0">
+         <padding>
+            <Insets bottom="6.0" left="5.0" right="5.0" top="6.0" />
+         </padding>
+      </Button>
+      <Button layoutY="282.0" mnemonicParsing="false" onAction="#navigateToDownload" prefWidth="140.0" text="Download Transaction" AnchorPane.leftAnchor="7.0" AnchorPane.topAnchor="281.0">
+         <padding>
+            <Insets bottom="6.0" left="5.0" right="5.0" top="6.0" />
+         </padding>
+      </Button>
+      <Button graphicTextGap="0.0" layoutX="3.0" layoutY="110.0" mnemonicParsing="false" onAction="#navigateToHome" prefWidth="140.0" text="Home" AnchorPane.leftAnchor="7.0" AnchorPane.topAnchor="81.0">
+         <padding>
+            <Insets bottom="6.0" left="5.0" right="5.0" top="6.0" />
+         </padding>
+      </Button>
+      <Button layoutY="177.0" mnemonicParsing="false" onAction="#navigateToViewExpenses" prefWidth="140.0" text=" View Transactions" AnchorPane.leftAnchor="7.0" AnchorPane.topAnchor="181.0">
+         <padding>
+            <Insets bottom="6.0" left="5.0" right="5.0" top="6.0" />
+         </padding>
+      </Button>
       <SplitPane layoutX="159.0" layoutY="45.0" prefHeight="382.0" prefWidth="794.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="159.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="45.0">
         <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="170.0" prefWidth="259.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0">
                <children>
-                  <GridPane gridLinesVisible="true" layoutY="-3.0" prefHeight="380.0" prefWidth="839.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                    <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                    </columnConstraints>
-                    <rowConstraints>
-                      <RowConstraints maxHeight="271.69598388671875" minHeight="10.0" prefHeight="61.275238037109375" vgrow="ALWAYS" />
-                      <RowConstraints maxHeight="209.11093139648438" minHeight="15.0" prefHeight="59.724761962890625" vgrow="SOMETIMES" />
-                      <RowConstraints maxHeight="160.5086212158203" minHeight="10.0" prefHeight="59.34410095214844" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="88.64630126953125" minHeight="10.0" prefHeight="64.37615966796875" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="89.53207397460938" minHeight="10.0" prefHeight="56.51837158203125" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="83.98162841796875" minHeight="10.0" prefHeight="83.98162841796875" vgrow="SOMETIMES" />
-                    </rowConstraints>
-                  </GridPane>
-                  <Text layoutX="58.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="month" />
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="travel" />
-                  <TextField layoutX="173.0" layoutY="23.0" />
-                  <Text layoutX="63.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" text="bills" />
-                  <TextField layoutX="171.0" layoutY="103.0" />
-                  <Text layoutX="340.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="subscriptions" />
-                  <TextField layoutX="477.0" layoutY="22.0" />
-                  <Text layoutX="340.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="food and drinks" />
-                  <TextField layoutX="477.0" layoutY="67.0" />
-                  <Text layoutX="344.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="entertainment" />
-                  <TextField layoutX="477.0" layoutY="119.0" />
-                  <Text layoutX="354.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="grocceries" />
-                  <TextField layoutX="477.0" layoutY="163.0" />
-                  <Text layoutX="55.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="health" />
-                  <TextField layoutX="172.0" layoutY="201.0" />
-                  <TextField layoutX="82.0" layoutY="163.0" />
-                  <Text layoutX="23.0" layoutY="218.0" strokeType="OUTSIDE" strokeWidth="0.0" text="shopping" />
-                  <TextField layoutX="82.0" layoutY="201.0" />
-                  <Text layoutX="344.0" layoutY="218.0" strokeType="OUTSIDE" strokeWidth="0.0" text="miscellaneous" />
-                  <TextField layoutX="477.0" layoutY="209.0" />
-                  <Button layoutX="314.0" layoutY="280.0" mnemonicParsing="false" text="update expenses" />
+                  <!-- Month selector added at the top -->
+                  <Label layoutX="351.0" layoutY="9.0" text="Select Month to Update:" AnchorPane.leftAnchor="351.0" AnchorPane.topAnchor="9.0" />
+                  <ComboBox fx:id="monthSelector" layoutX="544.0" layoutY="4.0" prefHeight="15.0" prefWidth="150.0" AnchorPane.leftAnchor="544.0" AnchorPane.rightAnchor="345.0" AnchorPane.topAnchor="8.0">
+                     <padding>
+                        <Insets top="-4.0" />
+                     </padding></ComboBox>
+                  
+                  <Text layoutX="351.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bills" AnchorPane.leftAnchor="351.0" AnchorPane.topAnchor="55.0" />
+                  <TextField fx:id="billsField" layoutX="537.0" layoutY="50.0" AnchorPane.leftAnchor="537.0" AnchorPane.topAnchor="50.0" />
+                  
+                  <Text layoutX="320.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Subscriptions" AnchorPane.leftAnchor="351.0" AnchorPane.topAnchor="105.0" />
+                  <TextField fx:id="subscriptionsField" layoutX="538.0" layoutY="46.0" AnchorPane.leftAnchor="537.0" AnchorPane.topAnchor="100.0" />
+                  
+                  <Text layoutX="188.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Entertainment" AnchorPane.leftAnchor="351.0" AnchorPane.topAnchor="155.0" />
+                  <TextField fx:id="entertainmentField" layoutX="537.0" layoutY="148.0" AnchorPane.leftAnchor="537.0" AnchorPane.topAnchor="148.0" />
+                  
+                  <Text layoutX="184.0" layoutY="228.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Food and Drinks" AnchorPane.leftAnchor="351.0" AnchorPane.topAnchor="205.0" />
+                  <TextField fx:id="foodField" layoutX="644.0" layoutY="209.0" AnchorPane.leftAnchor="537.0" AnchorPane.topAnchor="199.0" />
+                  
+                  <Text layoutX="354.0" layoutY="268.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Groceries" AnchorPane.leftAnchor="351.0" AnchorPane.topAnchor="252.60000038146973" />
+                  <TextField fx:id="groceriesField" layoutX="534.0" layoutY="248.0" AnchorPane.leftAnchor="537.0" AnchorPane.topAnchor="245.0" />
+                  
+                  <Text layoutX="340.0" layoutY="309.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Health and Wellbeing" AnchorPane.leftAnchor="351.0" AnchorPane.topAnchor="293.6000003814697" />
+                  <TextField fx:id="healthField" layoutX="534.0" layoutY="288.0" AnchorPane.leftAnchor="538.0" AnchorPane.topAnchor="288.0" />
+                  
+                  <Text layoutX="193.0" layoutY="408.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Shopping" AnchorPane.leftAnchor="351.0" AnchorPane.topAnchor="345.5" />
+                  <TextField fx:id="shoppingField" layoutX="537.0" layoutY="340.0" AnchorPane.leftAnchor="538.0" AnchorPane.topAnchor="339.0" />
+                  
+                  <Text layoutX="344.0" layoutY="421.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Travel" AnchorPane.leftAnchor="351.0" AnchorPane.topAnchor="397.0" />
+                  <TextField fx:id="travelField" layoutX="535.0" layoutY="400.0" AnchorPane.leftAnchor="538.0" AnchorPane.topAnchor="390.0" />
+                  
+                  <Text layoutX="333.0" layoutY="471.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Other" AnchorPane.leftAnchor="351.0" AnchorPane.topAnchor="449.6000003814697" />
+                  <TextField fx:id="otherField" layoutX="650.0" layoutY="498.0" AnchorPane.leftAnchor="538.0" AnchorPane.topAnchor="442.0" />
+                  
+                  <!-- Added Income field that was missing -->
+                  <Text layoutX="351.0" layoutY="520.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Income" AnchorPane.leftAnchor="351.0" AnchorPane.topAnchor="495.0" />
+                  <TextField fx:id="incomeField" layoutX="538.0" layoutY="490.0" AnchorPane.leftAnchor="538.0" AnchorPane.topAnchor="490.0" />
+                  
+                  <Button fx:id="updateButton" layoutX="468.0" layoutY="550.0" mnemonicParsing="false" onAction="#handleUpdateExpenses" text="Update Expenses" />
+                  
+                  <!-- Add a note about the update functionality -->
+                  <Label layoutX="340.0" layoutY="587.0" text="Updates will apply to all transactions in the selected month." />
                </children>
             </AnchorPane>
         </items>
@@ -72,19 +96,18 @@
       <AnchorPane layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" AnchorPane.leftAnchor="165.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#526779" height="25.0" layoutX="23.0" layoutY="9.0" stroke="BLACK" strokeType="INSIDE" width="5.0" AnchorPane.leftAnchor="23.0" />
-            <Label layoutX="63.0" layoutY="14.0" text="Update Expenses" AnchorPane.leftAnchor="63.0" />
-<!-- Replace the label with: -->
+            <Label layoutX="63.0" layoutY="14.0" text="Update Expenses" AnchorPane.leftAnchor="63.0" AnchorPane.topAnchor="10.0" />
             <fx:include layoutX="394.0" layoutY="12.0" source="dateComponent.fxml" AnchorPane.rightAnchor="387.5" /> 
-            <Button layoutX="502.5" layoutY="8.0" mnemonicParsing="false" text="Exit" AnchorPane.rightAnchor="305.5" />
-            <Label layoutX="565.0" layoutY="13.0" text="Welcome , User" AnchorPane.rightAnchor="179.5" />
-            <Circle fill="#48ddbd" layoutX="759.0" layoutY="23.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.rightAnchor="81.0" />
-            <Label layoutX="770.0" layoutY="13.0" text="Active" AnchorPane.rightAnchor="38.0" />
-            <ImageView fitHeight="21.0" fitWidth="21.0" layoutX="36.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="36.0">
+            <Button layoutX="502.5" layoutY="8.0" mnemonicParsing="false" onAction="#exitApplication" prefHeight="24.0" prefWidth="63.0" text="Exit" AnchorPane.rightAnchor="294.0" AnchorPane.topAnchor="8.0" />
+            <Label layoutX="565.0" layoutY="13.0" text="Welcome, User" AnchorPane.rightAnchor="179.5" AnchorPane.topAnchor="10.0" />
+            <Circle fill="#48ddbd" layoutX="759.0" layoutY="23.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.rightAnchor="89.0" AnchorPane.topAnchor="16.0" />
+            <Label layoutX="770.0" layoutY="13.0" text="Active" AnchorPane.rightAnchor="38.0" AnchorPane.topAnchor="10.0" />
+            <ImageView fitHeight="21.0" fitWidth="21.0" layoutX="36.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="36.0" AnchorPane.topAnchor="11.0">
                <image>
                   <Image url="@../images/update.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="31.0" fitWidth="41.0" layoutX="677.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="105.93333435058594">
+            <ImageView fitHeight="31.0" fitWidth="41.0" layoutX="677.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="120.93333435058594" AnchorPane.topAnchor="4.0">
                <image>
                   <Image url="@../images/user.png" />
                </image>
@@ -93,7 +116,7 @@
       </AnchorPane>
       <AnchorPane layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="155.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label layoutX="2.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="155.0" text="Expense Ease" textAlignment="JUSTIFY" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <Label alignment="CENTER" layoutX="2.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="155.0" styleClass="projectname" text="Expense Ease" textAlignment="JUSTIFY" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
                <padding>
                   <Insets left="33.0" />
                </padding>
@@ -104,6 +127,5 @@
    <stylesheets>
       <String fx:value="@../styles/general.css" />
       <String fx:value="@../styles/update.css" />
-    
    </stylesheets>
 </AnchorPane>

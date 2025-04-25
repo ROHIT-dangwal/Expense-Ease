@@ -15,7 +15,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="800.0" prefHeight="800.0" prefWidth="1200.0" stylesheets="@../styles/download.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.downloadController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="800.0" prefHeight="800.0" prefWidth="1900.0" stylesheets="@../styles/download.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.downloadController">
    <children>
       <Separator layoutX="144.0" orientation="VERTICAL" prefHeight="431.0" prefWidth="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="155.0" AnchorPane.topAnchor="0.0" />
       
@@ -50,14 +50,17 @@
                </font>
             </Label>
             <Separator prefWidth="200.0" />
-            <Label text="Select the table you want to download:" />
-            <ComboBox fx:id="tableSelector" prefWidth="200.0" promptText="Select Table" styleClass="selecttable" />
+
+            <Label text="Select what you want to download:" />
+            <ComboBox fx:id="tableSelector" prefWidth="200.0" promptText="Select Data" styleClass="selecttable" />
             <Button fx:id="downloadButton" mnemonicParsing="false" onAction="#handleDownload" prefHeight="32.0" prefWidth="200.0" styleClass="downloadbutton" text="Download as CSV">
                <effect>
                   <DropShadow />
                </effect>
             </Button>
-            <Label fx:id="statusLabel" text="Select a table and click download" textFill="#4a6feb" />
+            <Label fx:id="statusLabel" text="Select data and click download" textFill="#4a6feb" />
+            <Separator prefWidth="200.0" />
+            <Label text="The downloaded file will be saved as a CSV file that can be opened in Excel or Google Sheets" />
          </children>
          <padding>
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />

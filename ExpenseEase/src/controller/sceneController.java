@@ -14,6 +14,13 @@ public class sceneController {
     private Scene scene;
     private Parent root;
 
+    // Store loaders for each screen to enable controller communication
+    private static FXMLLoader homeLoader;
+    private static FXMLLoader addLoader;
+    private static FXMLLoader viewLoader;
+    private static FXMLLoader updateLoader;
+    private static FXMLLoader downloadLoader;
+
     /**
      * Generic method to switch between scenes
      * 
@@ -27,14 +34,51 @@ public class sceneController {
                 throw new IOException("Cannot find FXML file: " + fxmlFile);
             }
 
-            root = FXMLLoader.load(location);
+            FXMLLoader loader = new FXMLLoader(location);
+            root = loader.load();
+
+            // Store the loader for the corresponding screen
+            storeLoader(fxmlFile, loader);
+
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
+
+            // Add CSS stylesheet
+            String cssPath = "/styles/" + fxmlFile.replace(".fxml", ".css");
+            URL cssUrl = getClass().getResource(cssPath);
+            if (cssUrl != null) {
+                scene.getStylesheets().add(cssUrl.toExternalForm());
+            }
+
+            // Save current fullscreen state
+            boolean wasFullScreen = stage.isFullScreen();
+
             stage.setScene(scene);
+
+            // Restore fullscreen state
+            stage.setFullScreen(wasFullScreen);
+
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();
             System.out.println("Error loading " + fxmlFile + ": " + e.getMessage());
+        }
+    }
+
+    /**
+     * Store the loader for each screen type
+     */
+    private void storeLoader(String fxmlFile, FXMLLoader loader) {
+        if (fxmlFile.equals("home.fxml")) {
+            homeLoader = loader;
+        } else if (fxmlFile.equals("add.fxml")) {
+            addLoader = loader;
+        } else if (fxmlFile.equals("view.fxml")) {
+            viewLoader = loader;
+        } else if (fxmlFile.equals("update.fxml")) {
+            updateLoader = loader;
+        } else if (fxmlFile.equals("download.fxml")) {
+            downloadLoader = loader;
         }
     }
 
@@ -79,5 +123,30 @@ public class sceneController {
         System.out.println("Exiting application");
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.close();
+    }
+
+    public static void storeHomeLoader(FXMLLoader loader) {
+        homeLoader = loader;
+    }
+
+    // Getter methods for loaders
+    public static FXMLLoader getHomeLoader() {
+        return homeLoader;
+    }
+
+    public static FXMLLoader getAddLoader() {
+        return addLoader;
+    }
+
+    public static FXMLLoader getViewLoader() {
+        return viewLoader;
+    }
+
+    public static FXMLLoader getUpdateLoader() {
+        return updateLoader;
+    }
+
+    public static FXMLLoader getDownloadLoader() {
+        return downloadLoader;
     }
 }

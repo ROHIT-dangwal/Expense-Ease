@@ -14,67 +14,82 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Rectangle?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="800.0" prefHeight="800.0" prefWidth="1200.0" stylesheets="@../styles/view.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.sceneController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="800.0" prefHeight="800.0" prefWidth="1900.0" stylesheets="@../styles/view.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ViewTransactionsController">
    <children>
-      <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-         <children>
-          <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="155.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-               <children>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#526779" height="25.0" layoutX="23.0" layoutY="9.0" stroke="BLACK" strokeType="INSIDE" width="5.0" AnchorPane.leftAnchor="23.0" />
-                  <Label layoutX="65.0" layoutY="13.0" text="View Transactions" AnchorPane.leftAnchor="65.0" AnchorPane.topAnchor="10.0" />
-                  <fx:include layoutX="394.0" layoutY="12.0" source="dateComponent.fxml" AnchorPane.rightAnchor="387.5" />
-                  <Button layoutX="690.0" layoutY="7.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="64.0" text="Exit" AnchorPane.rightAnchor="291.0" />
-                  <Label layoutX="468.0" layoutY="13.0" text="Welcome , User" AnchorPane.rightAnchor="176.5" />
-                  <Circle fill="#48ddbd" layoutX="759.0" layoutY="23.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.rightAnchor="89.0" AnchorPane.topAnchor="16.0" />
-                  <Label layoutX="770.0" layoutY="13.0" text="Active" AnchorPane.rightAnchor="38.0" AnchorPane.topAnchor="10.0" />
-                  <ImageView fitHeight="25.0" fitWidth="30.0" layoutX="33.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="33.0">
-                     <image>
-                        <Image url="@../images/view.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="31.0" fitWidth="41.0" layoutX="606.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="120.93" AnchorPane.topAnchor="4.0">
-                     <image>
-                        <Image url="@../images/user.png" />
-                     </image>
-                  </ImageView>
-               </children>
-            </AnchorPane>
-          <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="155.0" AnchorPane.leftAnchor="0.0">
-               <children>
-                  <Label layoutX="2.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="155.0" styleClass="projectname" text="Expense Ease" textAlignment="JUSTIFY" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
-                     <padding>
-                        <Insets left="33.0" />
-                     </padding>
-                  </Label>
-               </children>
-            </AnchorPane>
-         </children>
-      </AnchorPane>
       <Separator layoutX="144.0" orientation="VERTICAL" prefHeight="431.0" prefWidth="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="155.0" AnchorPane.topAnchor="0.0" />
-      <Separator layoutX="144.0" orientation="VERTICAL" prefHeight="431.0" prefWidth="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="155.0" AnchorPane.topAnchor="0.0" />
-      <Button layoutX="3.0" layoutY="171.0" minWidth="-Infinity" mnemonicParsing="false" onAction="#navigateToAddExpense" prefWidth="140.0" text="Add Income" AnchorPane.leftAnchor="7.0" AnchorPane.topAnchor="131.0" />
-      <Button layoutY="230.0" mnemonicParsing="false" onAction="#navigateToUpdate" prefWidth="140.0" text="Update Expenses" AnchorPane.leftAnchor="7.0" AnchorPane.topAnchor="231.0" />
-      <Button layoutY="282.0" mnemonicParsing="false" onAction="#navigateToDownload" prefHeight="31.0" prefWidth="140.0" text="Download Transaction" AnchorPane.leftAnchor="7.0" AnchorPane.topAnchor="281.0" />
-      <Button graphicTextGap="0.0" layoutX="1.0" layoutY="81.0" mnemonicParsing="false" onAction="#navigateToHome" prefWidth="140.0" text="Home" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="1053.0" AnchorPane.topAnchor="81.0">
+      <Button layoutX="3.0" layoutY="171.0" minWidth="-Infinity" mnemonicParsing="false" onAction="#navigateToAddExpense" prefWidth="140.0" text="Add Income" AnchorPane.leftAnchor="7.0" AnchorPane.topAnchor="131.0">
          <padding>
             <Insets bottom="6.0" left="5.0" right="5.0" top="6.0" />
-         </padding></Button>
-      <Button layoutY="177.0" mnemonicParsing="false" onAction="#navigateToViewExpenses" prefWidth="140.0" text="View Transactions" AnchorPane.leftAnchor="7.0" AnchorPane.topAnchor="181.0" />
-      <TableView layoutX="140.0" layoutY="69.0" minHeight="802.0" minWidth="796.0" AnchorPane.bottomAnchor="19.0" AnchorPane.leftAnchor="182.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="66.0">
-        <columns>
-          <TableColumn editable="false" minWidth="22.0" prefWidth="56.26127624511719" sortable="false" text="Month" />
-          <TableColumn editable="false" minWidth="45.0" prefWidth="76.15966796875" text="Bills" />
-            <TableColumn editable="false" prefWidth="95.89834594726562" text="Subscriptions" />
-            <TableColumn editable="false" prefWidth="100.60165405273438" text="Entertainment" />
-            <TableColumn editable="false" prefWidth="68.26583862304688" text="Food &amp; Drink" />
-            <TableColumn editable="false" prefWidth="75.0" text="Groceries" />
-            <TableColumn editable="false" prefWidth="75.0" text="Health &amp; WelllBeing" />
-            <TableColumn prefWidth="75.0" text="Shopping" />
-            <TableColumn prefWidth="49.69512939453125" text="Travel" />
-            <TableColumn prefWidth="104.30487060546875" text="Total Expenditure" />
-            <TableColumn prefWidth="54.832275390625" text="Income" />
-            <TableColumn prefWidth="101.167724609375" text="Gross Savings" />
-        </columns>
+         </padding>
+      </Button>
+      <Button layoutY="230.0" mnemonicParsing="false" onAction="#navigateToUpdate" prefWidth="140.0" text="Update Expenses" AnchorPane.leftAnchor="7.0" AnchorPane.topAnchor="231.0">
+         <padding>
+            <Insets bottom="6.0" left="5.0" right="5.0" top="6.0" />
+         </padding>
+      </Button>
+      <Button layoutY="282.0" mnemonicParsing="false" onAction="#navigateToDownload" prefHeight="31.0" prefWidth="140.0" text="Download Transaction" AnchorPane.leftAnchor="7.0" AnchorPane.topAnchor="281.0">
+         <padding>
+            <Insets bottom="6.0" left="5.0" right="5.0" top="6.0" />
+         </padding>
+      </Button>
+      <Button graphicTextGap="0.0" layoutX="1.0" layoutY="81.0" mnemonicParsing="false" onAction="#navigateToHome" prefWidth="140.0" text="Home" AnchorPane.leftAnchor="7.0" AnchorPane.topAnchor="81.0">
+         <padding>
+            <Insets bottom="6.0" left="5.0" right="5.0" top="6.0" />
+         </padding>
+      </Button>
+      <Button layoutY="177.0" mnemonicParsing="false" onAction="#navigateToViewExpenses" prefWidth="140.0" text="View Transactions" AnchorPane.leftAnchor="7.0" AnchorPane.topAnchor="181.0">
+         <padding>
+            <Insets bottom="6.0" left="5.0" right="5.0" top="6.0" />
+         </padding>
+      </Button>
+      
+      <AnchorPane layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" AnchorPane.leftAnchor="165.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#526779" height="25.0" layoutX="23.0" layoutY="9.0" stroke="BLACK" strokeType="INSIDE" width="5.0" AnchorPane.leftAnchor="23.0" />
+            <Label layoutX="63.0" layoutY="14.0" text="View Transactions" AnchorPane.leftAnchor="63.0" AnchorPane.topAnchor="10.0" />
+            <fx:include layoutX="394.0" layoutY="12.0" source="dateComponent.fxml" AnchorPane.rightAnchor="387.5" /> 
+            <Button layoutX="502.5" layoutY="8.0" mnemonicParsing="false" onAction="#exitApplication" prefHeight="24.0" prefWidth="63.0" text="Exit" AnchorPane.rightAnchor="294.0" AnchorPane.topAnchor="8.0" />
+            <Label layoutX="565.0" layoutY="13.0" text="Welcome, User" AnchorPane.rightAnchor="179.5" AnchorPane.topAnchor="10.0" />
+            <Circle fill="#48ddbd" layoutX="759.0" layoutY="23.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.rightAnchor="89.0" AnchorPane.topAnchor="16.0" />
+            <Label layoutX="770.0" layoutY="13.0" text="Active" AnchorPane.rightAnchor="38.0" AnchorPane.topAnchor="10.0" />
+            <ImageView fitHeight="21.0" fitWidth="21.0" layoutX="36.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="36.0" AnchorPane.topAnchor="11.0">
+               <image>
+                  <Image url="@../images/view.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="31.0" fitWidth="41.0" layoutX="677.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="120.93333435058594" AnchorPane.topAnchor="4.0">
+               <image>
+                  <Image url="@../images/user.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="155.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label alignment="CENTER" layoutX="2.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="155.0" styleClass="projectname" text="Expense Ease" textAlignment="JUSTIFY" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <padding>
+                  <Insets left="33.0" />
+               </padding>
+            </Label>
+         </children>
+      </AnchorPane>
+      
+      <TableView fx:id="transactionsTable" layoutX="182.0" layoutY="66.0" AnchorPane.bottomAnchor="19.0" AnchorPane.leftAnchor="182.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="66.0">
+         <columns>
+            <TableColumn fx:id="monthColumn" editable="false" prefWidth="56.0" text="Month" />
+            <TableColumn fx:id="billsColumn" editable="false" prefWidth="76.0" text="Bills" />
+            <TableColumn fx:id="subscriptionsColumn" editable="false" prefWidth="95.0" text="Subscriptions" />
+            <TableColumn fx:id="entertainmentColumn" editable="false" prefWidth="100.0" text="Entertainment" />
+            <TableColumn fx:id="foodDrinkColumn" editable="false" prefWidth="68.0" text="Food &amp; Drink" />
+            <TableColumn fx:id="groceriesColumn" editable="false" prefWidth="75.0" text="Groceries" />
+            <TableColumn fx:id="healthColumn" editable="false" prefWidth="75.0" text="Health &amp; WellBeing" />
+            <TableColumn fx:id="shoppingColumn" prefWidth="75.0" text="Shopping" />
+            <TableColumn fx:id="travelColumn" prefWidth="49.0" text="Travel" />
+            <TableColumn fx:id="otherColumn" editable="false" prefWidth="75.0" text="Other" />
+            <TableColumn fx:id="totalExpenditureColumn" prefWidth="104.0" text="Total Expenditure" />
+            <TableColumn fx:id="incomeColumn" prefWidth="54.0" text="Income" />
+            <TableColumn fx:id="grossSavingsColumn" prefWidth="101.0" text="Gross Savings" />
+         </columns>
          <padding>
             <Insets bottom="45.0" left="23.0" right="23.0" top="11.0" />
          </padding>

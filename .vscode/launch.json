@@ -6,9 +6,16 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "Main",
+            "projectName": "ExpenseEase_ae27f3e4"
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
-            "vmArgs":"--module-path /Users/rohit/Desktop/ExpenseEase/ExpenseEase/lib --add-modules javafx.controls,javafx.fxml",
+            "vmArgs": "--module-path /Users/rohit/Desktop/ExpenseEase/ExpenseEase/lib --add-modules javafx.controls,javafx.fxml",
             "mainClass": "${file}"
         },
         {
@@ -16,8 +23,7 @@
             "name": "App",
             "request": "launch",
             "mainClass": "App",
-            "projectName": "ExpenseEase_e3d5f69b",
-
+            "projectName": "ExpenseEase_e3d5f69b"
         }
     ]
 }
