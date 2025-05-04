@@ -42,7 +42,7 @@ public class LineChartController implements Initializable {
         // Set up chart title and axes
         lineChart.setTitle("Monthly Income vs Expenses");
         xAxis.setLabel("Month");
-        yAxis.setLabel("Amount ($)");
+        yAxis.setLabel("Amount (₹)");
 
         // Setup animation
         lineChart.setAnimated(true);
@@ -112,7 +112,7 @@ public class LineChartController implements Initializable {
                     int monthNum = rs.getInt("month");
                     double income = rs.getDouble("total_income");
                     incomeByMonth.put(Month.of(monthNum), income);
-                    System.out.println("DB Income for Month " + monthNum + ": $" + income);
+                    System.out.println("DB Income for Month " + monthNum + ": ₹" + income);
                 }
             }
         }
@@ -140,7 +140,7 @@ public class LineChartController implements Initializable {
                     int monthNum = rs.getInt("month");
                     double expenses = rs.getDouble("total_expenses");
                     expensesByMonth.put(Month.of(monthNum), expenses);
-                    System.out.println("DB Expenses for Month " + monthNum + ": $" + expenses);
+                    System.out.println("DB Expenses for Month " + monthNum + ": ₹" + expenses);
                 }
             }
         }
@@ -153,7 +153,7 @@ public class LineChartController implements Initializable {
             for (XYChart.Data<String, Number> data : series.getData()) {
                 if (data.getNode() != null) {
                     javafx.scene.control.Tooltip tooltip = new javafx.scene.control.Tooltip(
-                            series.getName() + " in " + data.getXValue() + ": $" +
+                            series.getName() + " in " + data.getXValue() + ": ₹" +
                                     String.format("%.2f", data.getYValue().doubleValue()));
                     javafx.scene.control.Tooltip.install(data.getNode(), tooltip);
 

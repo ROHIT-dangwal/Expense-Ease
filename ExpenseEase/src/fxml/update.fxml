@@ -15,7 +15,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="800.0" prefHeight="800.0" prefWidth="1900.0" stylesheets="@../styles/update.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.UpdateExpensesController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="800.0" prefHeight="800.0" prefWidth="1500.0" stylesheets="@../styles/update.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.UpdateExpensesController">
    <children>
       <Separator layoutX="144.0" orientation="VERTICAL" prefHeight="431.0" prefWidth="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="155.0" AnchorPane.topAnchor="0.0" />
       <Button layoutX="3.0" layoutY="171.0" minWidth="-Infinity" mnemonicParsing="false" onAction="#navigateToAddExpense" prefWidth="140.0" text="Add Income" AnchorPane.leftAnchor="7.0" AnchorPane.topAnchor="131.0">
@@ -43,16 +43,42 @@
             <Insets bottom="6.0" left="5.0" right="5.0" top="6.0" />
          </padding>
       </Button>
+      <AnchorPane layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" AnchorPane.leftAnchor="165.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#526779" height="25.0" layoutX="23.0" layoutY="9.0" stroke="BLACK" strokeType="INSIDE" width="5.0" AnchorPane.leftAnchor="23.0" />
+            <Label layoutX="63.0" layoutY="14.0" text="Update Expenses" AnchorPane.leftAnchor="63.0" AnchorPane.topAnchor="10.0" />
+            <fx:include layoutX="394.0" layoutY="12.0" source="dateComponent.fxml" AnchorPane.rightAnchor="387.5" /> 
+            <Button layoutX="502.5" layoutY="8.0" mnemonicParsing="false" onAction="#exitApplication" prefHeight="24.0" prefWidth="63.0" text="Exit" AnchorPane.rightAnchor="294.0" AnchorPane.topAnchor="8.0" />
+            <Label layoutX="565.0" layoutY="13.0" text="Welcome, User" AnchorPane.rightAnchor="179.5" AnchorPane.topAnchor="10.0" />
+            <Circle fill="#48ddbd" layoutX="759.0" layoutY="23.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.rightAnchor="89.0" AnchorPane.topAnchor="16.0" />
+            <Label layoutX="770.0" layoutY="13.0" text="Active" AnchorPane.rightAnchor="38.0" AnchorPane.topAnchor="10.0" />
+            <ImageView fitHeight="21.0" fitWidth="21.0" layoutX="36.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="36.0" AnchorPane.topAnchor="11.0">
+               <image>
+                  <Image url="@../images/update.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="31.0" fitWidth="41.0" layoutX="677.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="120.93333435058594" AnchorPane.topAnchor="4.0">
+               <image>
+                  <Image url="@../images/user.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="155.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label alignment="CENTER" layoutX="2.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="155.0" styleClass="projectname" text="Expense Ease" textAlignment="JUSTIFY" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <padding>
+                  <Insets left="33.0" />
+               </padding>
+            </Label>
+         </children>
+      </AnchorPane>
       <SplitPane layoutX="159.0" layoutY="45.0" prefHeight="382.0" prefWidth="794.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="159.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="45.0">
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0">
                <children>
-                  <!-- Month selector added at the top -->
+                  <!-- Month selector fixed to ensure proper layering -->
                   <Label layoutX="351.0" layoutY="9.0" text="Select Month to Update:" AnchorPane.leftAnchor="351.0" AnchorPane.topAnchor="9.0" />
-                  <ComboBox fx:id="monthSelector" layoutX="544.0" layoutY="4.0" prefHeight="15.0" prefWidth="150.0" AnchorPane.leftAnchor="544.0" AnchorPane.rightAnchor="345.0" AnchorPane.topAnchor="8.0">
-                     <padding>
-                        <Insets top="-4.0" />
-                     </padding></ComboBox>
                   
                   <Text layoutX="351.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bills" AnchorPane.leftAnchor="351.0" AnchorPane.topAnchor="55.0" />
                   <TextField fx:id="billsField" layoutX="537.0" layoutY="50.0" AnchorPane.leftAnchor="537.0" AnchorPane.topAnchor="50.0" />
@@ -86,6 +112,11 @@
                   <TextField fx:id="incomeField" layoutX="538.0" layoutY="490.0" AnchorPane.leftAnchor="538.0" AnchorPane.topAnchor="490.0" />
                   
                   <Button fx:id="updateButton" layoutX="468.0" layoutY="550.0" mnemonicParsing="false" onAction="#handleUpdateExpenses" text="Update Expenses" />
+                  <ComboBox fx:id="monthSelector" layoutX="537.0" layoutY="4.0" prefHeight="28.0" prefWidth="160.0" promptText="Month" styleClass="combo-box-popup" visibleRowCount="5" AnchorPane.leftAnchor="537.0" AnchorPane.topAnchor="8.0">
+                     <padding>
+                        <Insets top="-4.0" />
+                     </padding>
+                  </ComboBox>
                   
                   <!-- Add a note about the update functionality -->
                   <Label layoutX="340.0" layoutY="587.0" text="Updates will apply to all transactions in the selected month." />
@@ -93,36 +124,6 @@
             </AnchorPane>
         </items>
       </SplitPane>
-      <AnchorPane layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" AnchorPane.leftAnchor="165.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#526779" height="25.0" layoutX="23.0" layoutY="9.0" stroke="BLACK" strokeType="INSIDE" width="5.0" AnchorPane.leftAnchor="23.0" />
-            <Label layoutX="63.0" layoutY="14.0" text="Update Expenses" AnchorPane.leftAnchor="63.0" AnchorPane.topAnchor="10.0" />
-            <fx:include layoutX="394.0" layoutY="12.0" source="dateComponent.fxml" AnchorPane.rightAnchor="387.5" /> 
-            <Button layoutX="502.5" layoutY="8.0" mnemonicParsing="false" onAction="#exitApplication" prefHeight="24.0" prefWidth="63.0" text="Exit" AnchorPane.rightAnchor="294.0" AnchorPane.topAnchor="8.0" />
-            <Label layoutX="565.0" layoutY="13.0" text="Welcome, User" AnchorPane.rightAnchor="179.5" AnchorPane.topAnchor="10.0" />
-            <Circle fill="#48ddbd" layoutX="759.0" layoutY="23.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.rightAnchor="89.0" AnchorPane.topAnchor="16.0" />
-            <Label layoutX="770.0" layoutY="13.0" text="Active" AnchorPane.rightAnchor="38.0" AnchorPane.topAnchor="10.0" />
-            <ImageView fitHeight="21.0" fitWidth="21.0" layoutX="36.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="36.0" AnchorPane.topAnchor="11.0">
-               <image>
-                  <Image url="@../images/update.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="31.0" fitWidth="41.0" layoutX="677.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="120.93333435058594" AnchorPane.topAnchor="4.0">
-               <image>
-                  <Image url="@../images/user.png" />
-               </image>
-            </ImageView>
-         </children>
-      </AnchorPane>
-      <AnchorPane layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="155.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <children>
-            <Label alignment="CENTER" layoutX="2.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="155.0" styleClass="projectname" text="Expense Ease" textAlignment="JUSTIFY" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
-               <padding>
-                  <Insets left="33.0" />
-               </padding>
-            </Label>
-         </children>
-      </AnchorPane>
    </children>
    <stylesheets>
       <String fx:value="@../styles/general.css" />

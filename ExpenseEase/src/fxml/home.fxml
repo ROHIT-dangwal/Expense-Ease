@@ -12,7 +12,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600.0" minWidth="1000.0" prefHeight="800.0" prefWidth="1900.0" stylesheets="@../styles/home.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomeController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600.0" minWidth="1000.0" prefHeight="800.0" prefWidth="1500.0" stylesheets="@../styles/home.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomeController">
    <children>
       <Separator layoutX="144.0" orientation="VERTICAL" prefHeight="431.0" prefWidth="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="155.0" AnchorPane.topAnchor="0.0" />
       <Button graphicTextGap="0.0" layoutX="7.0" layoutY="81.0" mnemonicParsing="false" onAction="#navigateToHome" prefWidth="140.0" text="Home" AnchorPane.leftAnchor="7.0" AnchorPane.topAnchor="81.0">

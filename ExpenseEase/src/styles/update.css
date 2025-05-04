@@ -16,6 +16,8 @@
   -fx-background-radius: 10px 40px 40px 10px;
   -fx-font-size: 11px;
   -fx-font-weight: bold;
+  -fx-scale-x: 1.05;
+  -fx-scale-y: 1.2;
   /* -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 3, 0, 0, 1); */
 }
 
