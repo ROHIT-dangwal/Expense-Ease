@@ -32,39 +32,28 @@ public class LineChartController implements Initializable {
 
     @FXML
     private NumberAxis yAxis;
-
-    // Keep track of the currently displayed year
     private int currentDisplayYear;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        // Add style class for CSS styling
-        // Set up chart title and axes
+
         lineChart.setTitle("Monthly Income vs Expenses");
         xAxis.setLabel("Month");
         yAxis.setLabel("Amount (₹)");
 
-        // Setup animation
         lineChart.setAnimated(true);
-
-        // Configure line chart to show symbols at data points
         lineChart.setCreateSymbols(true);
 
-        // Prevent auto-ranging which might cause visual issues
         yAxis.setAutoRanging(false);
         yAxis.setForceZeroInRange(false);
 
-        // Default to current year
         currentDisplayYear = LocalDate.now().getYear();
 
-        // Load data from database
         loadChartData();
 
-        // Add style class for CSS styling
         lineChart.getStyleClass().add("financial-line-chart");
     }
 
-    // Method to refresh the chart - can be called from other controllers
     public void refreshChart() {
         System.out.println("Refreshing chart for year: " + currentDisplayYear);
         updateChartForYear(currentDisplayYear);
@@ -81,7 +70,6 @@ public class LineChartController implements Initializable {
             throw new SQLException("Unable to establish database connection");
         }
 
-        // Test if connection is valid
         if (conn.isClosed() || !conn.isValid(2)) { // 2 second timeout
             // Try to reconnect
             DatabaseConnector.closeConnection();
@@ -173,7 +161,6 @@ public class LineChartController implements Initializable {
     }
 
     private void adjustYAxisScale() {
-        // Find the min and max values across all series data
         double minValue = Double.MAX_VALUE;
         double maxValue = Double.MIN_VALUE;
 
@@ -187,7 +174,6 @@ public class LineChartController implements Initializable {
             }
         }
 
-        // If no actual data, set default range
         if (minValue == Double.MAX_VALUE || maxValue == Double.MIN_VALUE) {
             yAxis.setLowerBound(0);
             yAxis.setUpperBound(1000);
@@ -195,32 +181,26 @@ public class LineChartController implements Initializable {
             return;
         }
 
-        // Add padding (10%)
         double range = maxValue - minValue;
         double padding = range * 0.1;
-
-        // If range is very small, use a minimum range
         if (range < 1000) {
             range = 1000;
             padding = 100;
         }
 
-        // Set y-axis bounds
-        yAxis.setLowerBound(Math.min(0, minValue - padding)); // Allow negative values
+        yAxis.setLowerBound(Math.min(0, minValue - padding));
         yAxis.setUpperBound(maxValue + padding);
-        yAxis.setTickUnit(range / 10); // 10 tick marks
+        yAxis.setTickUnit(range / 10);
 
         System.out.println("Y-axis range set to: " + yAxis.getLowerBound() + " to " + yAxis.getUpperBound());
     }
 
-    // Method to update the chart for a specific year
     public void updateChartForYear(int year) {
         // Update the tracked year
         currentDisplayYear = year;
         System.out.println("Updating chart for year: " + year);
 
         try {
-            // Create series for the data
             XYChart.Series<String, Number> incomeSeries = new XYChart.Series<>();
             incomeSeries.setName("Income");
 
@@ -230,11 +210,9 @@ public class LineChartController implements Initializable {
             XYChart.Series<String, Number> savingsSeries = new XYChart.Series<>();
             savingsSeries.setName("Savings");
 
-            // Get data from database
             Map<Month, Double> incomeByMonth = getIncomeByMonth(year);
             Map<Month, Double> expensesByMonth = getExpensesByMonth(year);
 
-            // Find months that have either income or expense data
             Set<Month> monthsWithData = new HashSet<>();
             monthsWithData.addAll(incomeByMonth.keySet());
             monthsWithData.addAll(expensesByMonth.keySet());
@@ -242,37 +220,30 @@ public class LineChartController implements Initializable {
             System.out.println("Months with data for year " + year + ": " + monthsWithData);
 
             if (monthsWithData.isEmpty()) {
-                // No data found for this year
                 lineChart.getData().clear();
                 lineChart.setTitle("No data available for " + year);
 
-                // Set up empty chart with reasonable bounds
                 yAxis.setLowerBound(0);
                 yAxis.setUpperBound(1000);
                 yAxis.setTickUnit(100);
 
-                // Clear x-axis categories if no data
                 xAxis.setCategories(FXCollections.observableArrayList());
 
                 return;
             }
 
-            // If it's the current year, only show months up to the current month
             final Month endMonth = (year == LocalDate.now().getYear())
                     ? LocalDate.now().getMonth()
                     : Month.DECEMBER;
 
-            // Create a list of month labels that actually have data
             List<String> monthLabelsWithData = monthsWithData.stream()
                     .sorted()
                     .filter(month -> month.getValue() <= endMonth.getValue())
                     .map(month -> month.getDisplayName(TextStyle.SHORT, Locale.US))
                     .collect(Collectors.toList());
 
-            // Set the x-axis categories to ONLY include months that have data
             xAxis.setCategories(FXCollections.observableArrayList(monthLabelsWithData));
 
-            // Process each month with data
             monthsWithData.stream()
                     .sorted()
                     .filter(month -> month.getValue() <= endMonth.getValue())

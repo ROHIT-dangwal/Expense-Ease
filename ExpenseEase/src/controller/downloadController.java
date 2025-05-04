@@ -28,27 +28,21 @@ public class downloadController {
 
     @FXML
     private Button downloadButton;
-
-    // Create an instance of sceneController for navigation
     private sceneController sceneNav = new sceneController();
 
     @FXML
     public void initialize() {
-        // Initialize the table selector with options
         ObservableList<String> options = FXCollections.observableArrayList(
                 "transactions",
                 "Monthly Summary",
                 "Category Report");
         tableSelector.setItems(options);
-        tableSelector.setValue("transactions"); // Set default value
-
-        // Set initial status
+        tableSelector.setValue("transactions");
         statusLabel.setText("Select data type and click download");
     }
 
     @FXML
     public void handleDownload(ActionEvent event) {
-        // Get the selected option
         String selectedOption = tableSelector.getValue();
         if (selectedOption == null) {
             statusLabel.setText("Please select a data type first");
@@ -60,18 +54,14 @@ public class downloadController {
         fileChooser.getExtensionFilters().add(
                 new FileChooser.ExtensionFilter("CSV Files", "*.csv"));
 
-        // Set default filename with today's date
         LocalDate currentDate = LocalDate.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         String defaultFileName = "expenseease_" + selectedOption + "_" + currentDate.format(formatter) + ".csv";
         fileChooser.setInitialFileName(defaultFileName);
-
-        // Get the stage from the event source
         Stage stage = (Stage) ((Button) event.getSource()).getScene().getWindow();
         File file = fileChooser.showSaveDialog(stage);
 
         if (file != null) {
-            // Export based on the selected option
             switch (selectedOption) {
                 case "transactions":
                     exportAllDataToCSV(file);
@@ -96,7 +86,6 @@ public class downloadController {
             }
 
             try (FileWriter csvWriter = new FileWriter(file)) {
-                // Build a query that gets all relevant financial data
                 String query = "SELECT t.id, t.date, t.income, " +
                         "t.bills, t.subscriptions, t.entertainment, " +
                         "t.food, t.groceries, t.health, " +
@@ -115,25 +104,19 @@ public class downloadController {
 
                     ResultSetMetaData metaData = rs.getMetaData();
                     int columnCount = metaData.getColumnCount();
-
-                    // Header
                     for (int i = 1; i <= columnCount; i++) {
                         csvWriter.append(metaData.getColumnName(i));
                         if (i < columnCount)
                             csvWriter.append(",");
                     }
                     csvWriter.append("\n");
-
-                    // Rows
                     int rowCount = 0;
                     while (rs.next()) {
                         rowCount++;
                         for (int i = 1; i <= columnCount; i++) {
                             String value = rs.getString(i);
-                            // Handle null values
                             if (value == null)
                                 value = "";
-                            // Escape commas and quotes
                             if (value.contains(",") || value.contains("\"") || value.contains("\n")) {
                                 value = "\"" + value.replace("\"", "\"\"") + "\"";
                             }
@@ -180,10 +163,8 @@ public class downloadController {
                 try (Statement stmt = conn.createStatement();
                         ResultSet rs = stmt.executeQuery(query)) {
 
-                    // Header
                     csvWriter.append("Year,Month,Month Name,Total Income,Total Expenses,Total Savings\n");
 
-                    // Rows
                     int rowCount = 0;
                     while (rs.next()) {
                         rowCount++;
@@ -194,7 +175,6 @@ public class downloadController {
                         double expenses = rs.getDouble("total_expenses");
                         double savings = rs.getDouble("total_savings");
 
-                        // Write the CSV row
                         csvWriter.append(String.valueOf(year)).append(",");
                         csvWriter.append(String.valueOf(month)).append(",");
                         csvWriter.append(monthName).append(",");
@@ -222,7 +202,6 @@ public class downloadController {
             }
 
             try (FileWriter csvWriter = new FileWriter(file)) {
-                // Query to get expense categories summed up
                 String query = "SELECT " +
                         "SUM(bills) as total_bills, " +
                         "SUM(subscriptions) as total_subscriptions, " +
@@ -241,7 +220,6 @@ public class downloadController {
                         ResultSet rs = stmt.executeQuery(query)) {
 
                     if (rs.next()) {
-                        // We'll create a different format for category report - more readable
                         csvWriter.append("Expense Category,Total Amount,Percentage\n");
 
                         double bills = rs.getDouble("total_bills");
@@ -255,7 +233,6 @@ public class downloadController {
                         double other = rs.getDouble("total_other");
                         double grandTotal = rs.getDouble("grand_total");
 
-                        // Write rows for each category
                         writeCategory(csvWriter, "Bills", bills, grandTotal);
                         writeCategory(csvWriter, "Subscriptions", subscriptions, grandTotal);
                         writeCategory(csvWriter, "Entertainment", entertainment, grandTotal);
@@ -266,7 +243,6 @@ public class downloadController {
                         writeCategory(csvWriter, "Travel", travel, grandTotal);
                         writeCategory(csvWriter, "Other", other, grandTotal);
 
-                        // Grand total row
                         csvWriter.append("TOTAL,").append(String.format("%.2f", grandTotal)).append(",100.00%\n");
 
                         csvWriter.flush();
@@ -289,7 +265,6 @@ public class downloadController {
         writer.append(String.format("%.2f%%", percentage)).append("\n");
     }
 
-    // Navigation methods that delegate to sceneController
     @FXML
     public void navigateToHome(ActionEvent event) {
         sceneNav.navigateToHome(event);

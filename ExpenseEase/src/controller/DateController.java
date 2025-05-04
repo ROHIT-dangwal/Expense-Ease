@@ -19,7 +19,6 @@ public class DateController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // Initial update
         updateDateTimeLabel();
 
         // Set up a timeline to update every second
